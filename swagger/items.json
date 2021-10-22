@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "ポテトチップス Mサイズ",
+      "description": "各種",
+      "addition": "お一人様いずれか2個限り",
+      "date": "",
+      "onlyOneDay": false,
+      "code": 4901330532901,
+      "category": {
+        "id": 2,
+        "name": "菓子"
+      },
+      "pop": [
+        {
+          "id": 1,
+          "name": "広告の品",
+          "price": 78,
+          "taxPrice": 85,
+          "size": [
+            {
+              "id": 1,
+              "paperSize": "A4",
+              "baseImage": "0001.jpeg",
+              "editedImage": "0001_(1).jpeg"
+            },
+            {
+              "id": 2,
+              "paperSize": "E5",
+              "baseImage": "0002.jpeg",
+              "editedImage": "0002_(1).jpeg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
