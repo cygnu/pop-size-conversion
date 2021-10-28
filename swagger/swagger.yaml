@@ -16,3 +16,19 @@ tags:
     description: POP情報関連API
 schemes:
   - "http"
+paths:
+  /items:
+    get:
+      tags:
+        - user
+      summary: ""
+      description: ""
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      rsponses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/ItemGetResponse"
