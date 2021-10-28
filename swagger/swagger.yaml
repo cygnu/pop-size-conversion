@@ -142,6 +142,27 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/CategoryGetResponse"
+    delete:
+      tags:
+        - categories
+      summary: 商品カテゴリの削除
+      description: ""
+      operationId: removeCategory
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            type: object
 
 definitions:
   ItemListResponse:
