@@ -17,6 +17,28 @@ tags:
 schemes:
   - "http"
 paths:
+  /items:
+    post:
+      tags:
+        - items
+      summary: 商品情報を登録
+      description: ""
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: ""
+          required: true
+          schema:
+            $ref: "#/definitions/ItemListResponse"
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/ItemListResponse"
   /item/{itemId}:
     get:
       tags:
