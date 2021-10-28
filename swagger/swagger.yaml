@@ -23,6 +23,7 @@ paths:
         - items
       summary: 商品情報を登録
       description: ""
+      operationId: addItems
       consumes:
         - application/json
       produces:
@@ -45,6 +46,7 @@ paths:
         - items
       summary: 商品情報詳細を取得
       description: ""
+      operationId: getItem
       consumes:
         - application/json
       produces:
@@ -65,6 +67,7 @@ paths:
         - items
       summary: 商品情報を更新
       description: ""
+      operationId: updateItem
       consumes:
         - application/json
       produces:
@@ -85,6 +88,7 @@ paths:
         - items
       summary: 商品情報を削除
       description: ""
+      operationId: deleteItem
       consumes:
         - application/json
       produces:
