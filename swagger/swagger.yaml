@@ -120,6 +120,28 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/CategoryGetResponse"
+  /category/{id}:
+    get:
+      tags:
+        - categories
+      summary: 商品カテゴリを追加
+      description: ""
+      operationId: getCategory
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/CategoryGetResponse"
 
 definitions:
   ItemListResponse:
