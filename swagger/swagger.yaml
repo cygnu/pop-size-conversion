@@ -32,3 +32,82 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/ItemListResponse"
+
+definitions:
+  ItemListResponse:
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: "#/definitions/ItemGetResponse"
+  ItemGetResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+        example: 123
+      name:
+        type: string
+        description: 商品名
+        example: ポテトチップス Mサイズ
+      description:
+        type: string
+        description: 商品説明
+        example: 各種
+      addition:
+        type: string
+        description: 補足
+        example: ""
+      onlyOneDay:
+        type: boolean
+        description: 限定
+        example: false
+      code:
+        type: integer
+        description: JANコード
+        example: 4901330532901
+      category:
+        $ref: "#/definitions/CategoryGetResponse"
+      pop:
+        type: array
+        items:
+          $ref: "#/definitions/PopGetResponse"
+  CategoryGetResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: カテゴリーID
+        example: 2
+      name:
+        type: string
+        description: カテゴリー名
+        example: 菓子
+  PopListResponse:
+    type: object
+    properties:
+      pop:
+        type: array
+        items:
+          $ref: "#/definitions/PopGetResponse"
+  PopGetResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: POP ID
+        example: 1
+      name:
+        type: string
+        description: POP名
+        example: 広告の品
+      price:
+        type: integer
+        description: 本体価格
+        example: 78
+      taxPrice:
+        type: integer
+        description: 税込価格
+        example: 85
