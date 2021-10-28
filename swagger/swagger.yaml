@@ -132,6 +132,11 @@ definitions:
         type: string
         description: 補足
         example: ""
+      date:
+        type: string
+        description: 日付
+        example: "2021-10-29"
+        format: date
       onlyOneDay:
         type: boolean
         description: 限定
