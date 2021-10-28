@@ -111,3 +111,22 @@ definitions:
         type: integer
         description: 税込価格
         example: 85
+      size:
+        type: array
+        items:
+          $ref: "#/definitions/SizeGetResponse"
+  SizeGetResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: サイズID
+        example: 1
+      paperSize:
+        type: string
+        description: サイズ
+        example: A4
+      baseImage:
+        type: string
+        description: 元画像
+        example: 0001.jpeg
