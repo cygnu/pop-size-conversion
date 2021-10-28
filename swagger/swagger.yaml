@@ -17,21 +17,27 @@ tags:
 schemes:
   - "http"
 paths:
-  /items:
+  /item/{itemId}:
     get:
       tags:
         - items
-      summary: 商品一覧を取得
+      summary: 商品情報詳細を取得
       description: ""
       consumes:
         - application/json
       produces:
         - application/json
+      parameters:
+        - name: item_id
+          in: path
+          description: ""
+          required: true
+          type: integer
       responses:
         "200":
           description: A successful response.
           schema:
-            $ref: "#/definitions/ItemListResponse"
+            $ref: "#/definitions/ItemGetResponse"
 
 definitions:
   ItemListResponse:
