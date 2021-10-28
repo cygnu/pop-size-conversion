@@ -40,7 +40,7 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/ItemListResponse"
-  /item/{itemId}:
+  /item/{id}:
     get:
       tags:
         - items
@@ -52,7 +52,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - name: item_id
+        - name: id
           in: path
           description: ""
           required: true
@@ -73,7 +73,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - name: item_id
+        - name: id
           in: path
           description: ""
           required: true
@@ -94,7 +94,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - name: item_id
+        - name: id
           in: path
           description: ""
           required: true
