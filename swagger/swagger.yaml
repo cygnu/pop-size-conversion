@@ -20,15 +20,15 @@ paths:
   /items:
     get:
       tags:
-        - user
-      summary: ""
+        - items
+      summary: 商品一覧を取得
       description: ""
       consumes:
         - application/json
       produces:
         - application/json
-      rsponses:
+      responses:
         "200":
           description: A successful response.
           schema:
-            $ref: "#/definitions/ItemGetResponse"
+            $ref: "#/definitions/ItemListResponse"
