@@ -80,6 +80,26 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/ItemGetResponse"
+    delete:
+      tags:
+        - items
+      summary: 商品情報を削除
+      description: ""
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: item_id
+          in: path
+          description: ""
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            type: object
 
 definitions:
   ItemListResponse:
