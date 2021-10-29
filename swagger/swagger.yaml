@@ -113,6 +113,22 @@ paths:
           description: A successful response.
           schema:
             type: object
+  /item:
+    post:
+      tags:
+        - items
+      summary: 商品情報を作成
+      description: ""
+      operationId: createItem
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/ItemResponse"
   /item/{id}:
     get:
       tags:
