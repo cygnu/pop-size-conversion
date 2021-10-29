@@ -18,6 +18,22 @@ tags:
 schemes:
   - "http"
 paths:
+  /pops:
+    post:
+      tags:
+        - pops
+      summary: ポップの作成
+      description: ""
+      operationId: createPops
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/PopListResponse"
   /item/{id}:
     get:
       tags:
