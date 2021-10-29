@@ -19,6 +19,21 @@ schemes:
   - "http"
 paths:
   /pops:
+    get:
+      tags:
+        - pops
+      summary: ポップ一覧を取得
+      description: ""
+      operationId: getPops
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/PopListResponse"
     post:
       tags:
         - pops
