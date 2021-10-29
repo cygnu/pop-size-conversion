@@ -8,15 +8,15 @@
       "onlyOneDay": false,
       "price": 78,
       "taxPrice": 85,
-      "category": {
-        "id": 2,
-        "name": "菓子"
-      },
       "item": {
         "id": 1,
         "name": "ポテトチップス Mサイズ",
         "description": "各種",
-        "code": 4901330532901
+        "code": 4901330532901,
+        "category": {
+          "id": 2,
+          "name": "菓子"
+        }
       },
       "size": [
         {
