@@ -213,7 +213,7 @@ paths:
     get:
       tags:
         - categories
-      summary: 商品カテゴリを追加
+      summary: 商品カテゴリを取得
       description: ""
       operationId: getCategory
       consumes:
