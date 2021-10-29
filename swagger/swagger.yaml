@@ -49,6 +49,28 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/PopListResponse"
+  /pop/{id}:
+    get:
+      tags:
+        - pops
+      summary: ポップ詳細を取得
+      description: ""
+      operationId: getPop
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/PopResponse"
   /item/{id}:
     get:
       tags:
