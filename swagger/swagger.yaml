@@ -8,38 +8,16 @@ host: "localhost:8080"
 tags:
   - name: users
     description: ユーザ関連API
+  - name: pops
+    description: POP情報関連API
   - name: items
     description: 商品関連API
   - name: categories
     description: 商品カテゴリ関連API
-  - name: pops
-    description: POP情報関連API
+
 schemes:
   - "http"
 paths:
-  /items:
-    post:
-      tags:
-        - items
-      summary: 商品情報を登録
-      description: ""
-      operationId: addItems
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - in: body
-          name: body
-          description: ""
-          required: true
-          schema:
-            $ref: "#/definitions/ItemListResponse"
-      responses:
-        "200":
-          description: A successful response.
-          schema:
-            $ref: "#/definitions/ItemListResponse"
   /item/{id}:
     get:
       tags:
@@ -61,7 +39,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: "#/definitions/ItemGetResponse"
+            $ref: "#/definitions/ItemResponse"
     put:
       tags:
         - items
@@ -82,7 +60,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: "#/definitions/ItemGetResponse"
+            $ref: "#/definitions/ItemResponse"
     delete:
       tags:
         - items
@@ -119,7 +97,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: "#/definitions/CategoryGetResponse"
+            $ref: "#/definitions/CategoryResponse"
   /category/{id}:
     get:
       tags:
@@ -141,7 +119,7 @@ paths:
         "200":
           description: A successful response.
           schema:
-            $ref: "#/definitions/CategoryGetResponse"
+            $ref: "#/definitions/CategoryResponse"
     delete:
       tags:
         - categories
@@ -165,14 +143,52 @@ paths:
             type: object
 
 definitions:
-  ItemListResponse:
+  PopListResponse:
     type: object
     properties:
-      items:
+      pop:
         type: array
         items:
-          $ref: "#/definitions/ItemGetResponse"
-  ItemGetResponse:
+          $ref: "#/definitions/PopResponse"
+  PopResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: POP ID
+        example: 1
+      name:
+        type: string
+        description: POP名
+        example: 広告の品
+      addition:
+        type: string
+        description: 補足
+        example: ""
+      date:
+        type: string
+        description: 日付
+        example: "2021-10-29"
+        format: date
+      onlyOneDay:
+        type: boolean
+        description: 限定
+        example: false
+      price:
+        type: integer
+        description: 本体価格
+        example: 78
+      taxPrice:
+        type: integer
+        description: 税込価格
+        example: 85
+      item:
+        $ref: "#/definitions/ItemResponse"
+      size:
+        type: array
+        items:
+          $ref: "#/definitions/SizeResponse"
+  ItemResponse:
     type: object
     properties:
       id:
@@ -187,30 +203,13 @@ definitions:
         type: string
         description: 商品説明
         example: 各種
-      addition:
-        type: string
-        description: 補足
-        example: ""
-      date:
-        type: string
-        description: 日付
-        example: "2021-10-29"
-        format: date
-      onlyOneDay:
-        type: boolean
-        description: 限定
-        example: false
       code:
         type: integer
         description: JANコード
         example: 4901330532901
       category:
-        $ref: "#/definitions/CategoryGetResponse"
-      pop:
-        type: array
-        items:
-          $ref: "#/definitions/PopGetResponse"
-  CategoryGetResponse:
+        $ref: "#/definitions/CategoryResponse"
+  CategoryResponse:
     type: object
     properties:
       id:
@@ -221,37 +220,7 @@ definitions:
         type: string
         description: カテゴリー名
         example: 菓子
-  PopListResponse:
-    type: object
-    properties:
-      pop:
-        type: array
-        items:
-          $ref: "#/definitions/PopGetResponse"
-  PopGetResponse:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: POP ID
-        example: 1
-      name:
-        type: string
-        description: POP名
-        example: 広告の品
-      price:
-        type: integer
-        description: 本体価格
-        example: 78
-      taxPrice:
-        type: integer
-        description: 税込価格
-        example: 85
-      size:
-        type: array
-        items:
-          $ref: "#/definitions/SizeGetResponse"
-  SizeGetResponse:
+  SizeResponse:
     type: object
     properties:
       id:
