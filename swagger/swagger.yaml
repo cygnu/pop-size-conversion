@@ -15,7 +15,8 @@ tags:
   - name: categories
     description: 商品カテゴリ関連API
 schemes:
-  - "http"
+  - https
+  - http
 paths:
   /accounts:
     post:
@@ -42,7 +43,7 @@ paths:
           description: Successful login
           schema:
             $ref: "#/definitions/AccountCreateResponse"
-  /accounts/{username}:
+  "/accounts/{username}":
     get:
       tags:
         - accounts
@@ -91,7 +92,7 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/PopListResponse"
-  /pop/{id}:
+  "/pop/{id}":
     get:
       tags:
         - pops
@@ -171,7 +172,7 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/ItemResponse"
-  /item/{id}:
+  "/item/{id}":
     get:
       tags:
         - items
@@ -251,7 +252,7 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/CategoryResponse"
-  /category/{id}:
+  "/category/{id}":
     get:
       tags:
         - categories
@@ -310,7 +311,7 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/SizeResponse"
-  /size/{id}:
+  "/size/{id}":
     get:
       tags:
         - pops
