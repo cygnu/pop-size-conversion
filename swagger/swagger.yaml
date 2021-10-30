@@ -268,6 +268,28 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/SizeResponse"
+  /size/{id}:
+    get:
+      tags:
+        - pops
+      summary: ポップサイズを取得
+      description: ""
+      operationId: getSize
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/SizeResponse"
 
 definitions:
   PopListResponse:
