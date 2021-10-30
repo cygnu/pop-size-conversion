@@ -290,6 +290,27 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/SizeResponse"
+    delete:
+      tags:
+        - pops
+      summary: ポップサイズの削除
+      description: ""
+      operationId: removeSize
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            type: object
 
 definitions:
   PopListResponse:
