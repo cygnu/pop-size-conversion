@@ -42,6 +42,24 @@ paths:
           description: Successful login
           schema:
             $ref: "#/definitions/AccountCreateResponse"
+  /accounts/{username}:
+    get:
+      tags:
+        - accounts
+      summary: Fetching an account
+      description: ""
+      operationId: findAccountByID
+      parameters:
+        - name: username
+          in: path
+          description: Username of account to return
+          required: true
+          type: string
+      responses:
+        "200":
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/AccountCreateResponse"
   /pops:
     get:
       tags:
