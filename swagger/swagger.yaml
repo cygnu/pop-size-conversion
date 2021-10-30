@@ -6,7 +6,7 @@ info:
   version: "1.0.0"
 host: "localhost:8080"
 tags:
-  - name: users
+  - name: accounts
     description: ユーザ関連API
   - name: pops
     description: POP情報関連API
@@ -14,10 +14,34 @@ tags:
     description: 商品関連API
   - name: categories
     description: 商品カテゴリ関連API
-
 schemes:
   - "http"
 paths:
+  /accounts:
+    post:
+      tags:
+        - accounts
+      security:
+        - tokenAuth: []
+      summary: Creating an account
+      description: ""
+      operationId: addAccount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: Request Body
+          required: true
+          schema:
+            $ref: "#/definitions/AccountCreateRequest"
+      responses:
+        "200":
+          description: Successful login
+          schema:
+            $ref: "#/definitions/AccountCreateResponse"
   /pops:
     get:
       tags:
@@ -312,7 +336,36 @@ paths:
           schema:
             type: object
 
+securityDefinitions:
+  tokenAuth:
+    type: apiKey
+    name: Authorization
+    in: header
 definitions:
+  AccountCreateRequest:
+    type: object
+    required:
+      - username
+      - password
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+  AccountCreateResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+      username:
+        type: string
+        example: cygnu
+      password:
+        type: string
+        example: P@ssw0rd
+      createdAt:
+        type: string
+        format: date-time
   PopListResponse:
     type: object
     properties:
