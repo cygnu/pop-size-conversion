@@ -369,8 +369,10 @@ definitions:
     properties:
       username:
         type: string
+        example: cygnu
       password:
         type: string
+        example: P@ssw0rd
   AccountCreateResponse:
     type: object
     properties:
@@ -397,32 +399,23 @@ definitions:
     properties:
       id:
         type: integer
-        description: POP ID
-        example: 1
       name:
         type: string
-        description: POP名
         example: 広告の品
       addition:
         type: string
-        description: 補足
         example: ""
       date:
         type: string
-        description: 日付
-        example: "2021-10-29"
         format: date
       onlyOneDay:
         type: boolean
-        description: 限定
         example: false
       price:
         type: integer
-        description: 本体価格
         example: 78
       taxPrice:
         type: integer
-        description: 税込価格
         example: 85
       item:
         $ref: "#/definitions/ItemResponse"
@@ -430,50 +423,56 @@ definitions:
         type: array
         items:
           $ref: "#/definitions/SizeResponse"
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
   ItemResponse:
     type: object
     properties:
       id:
         type: integer
-        description: 商品ID
-        example: 123
       name:
         type: string
-        description: 商品名
         example: ポテトチップス Mサイズ
       description:
         type: string
-        description: 商品説明
         example: 各種
       code:
         type: integer
-        description: JANコード
         example: 4901330532901
       category:
         $ref: "#/definitions/CategoryResponse"
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
   CategoryResponse:
     type: object
     properties:
       id:
         type: integer
-        description: カテゴリーID
-        example: 2
       name:
         type: string
-        description: カテゴリー名
         example: 菓子
+      createdOn:
+        type: string
+        format: date-time
   SizeResponse:
     type: object
     properties:
       id:
         type: integer
-        description: サイズID
-        example: 1
       paperSize:
         type: string
-        description: サイズ
         example: A4
       baseImage:
         type: string
-        description: 元画像
         example: 0001.jpeg
+      createdOn:
+        type: string
+        format: date-time
