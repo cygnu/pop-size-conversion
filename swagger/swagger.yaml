@@ -43,6 +43,10 @@ paths:
           description: Successful login
           schema:
             $ref: "#/definitions/AccountCreateResponse"
+        "400":
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/400BadRequestError"
   "/accounts/{username}":
     get:
       tags:
@@ -92,6 +96,10 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/PopListResponse"
+        "400":
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/400BadRequestError"
   "/pop/{id}":
     get:
       tags:
@@ -135,6 +143,10 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/PopResponse"
+        "400":
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/400BadRequestError"
     delete:
       tags:
         - pops
@@ -172,6 +184,10 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/ItemResponse"
+        "400":
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/400BadRequestError"
   "/item/{id}":
     get:
       tags:
@@ -215,6 +231,10 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/ItemResponse"
+        "400":
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/400BadRequestError"
     delete:
       tags:
         - items
@@ -252,6 +272,10 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/CategoryResponse"
+        "400":
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/400BadRequestError"
   "/category/{id}":
     get:
       tags:
@@ -311,6 +335,10 @@ paths:
           description: A successful response.
           schema:
             $ref: "#/definitions/SizeResponse"
+        "400":
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/400BadRequestError"
   "/size/{id}":
     get:
       tags:
@@ -476,3 +504,12 @@ definitions:
       createdOn:
         type: string
         format: date-time
+  400BadRequestError:
+    type: object
+    properties:
+      code:
+        type: number
+        example: 400
+      message:
+        type: string
+        example: Bad Request
