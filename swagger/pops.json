@@ -5,7 +5,7 @@
       "name": "広告の品",
       "addition": "お一人様いずれか2個限り",
       "date": "2021-10-29",
-      "onlyOneDay": false,
+      "isOneDay": false,
       "price": 78,
       "taxPrice": 85,
       "item": {
@@ -23,13 +23,11 @@
           "id": 1,
           "paperSize": "A4",
           "baseImage": "0001.jpeg",
-          "editedImage": "0001_(1).jpeg"
         },
         {
           "id": 2,
           "paperSize": "E5",
           "baseImage": "0002.jpeg",
-          "editedImage": "0002_(1).jpeg"
         }
       ]
     }

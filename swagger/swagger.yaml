@@ -436,7 +436,7 @@ definitions:
       date:
         type: string
         format: date
-      onlyOneDay:
+      isOneDay:
         type: boolean
         example: false
       price:
