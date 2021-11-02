@@ -69,7 +69,7 @@ paths:
     get:
       tags:
         - pops
-      summary: ポップ一覧を取得
+      summary: Fetching a list of pop
       description: ""
       operationId: getPops
       consumes:
@@ -84,7 +84,7 @@ paths:
     post:
       tags:
         - pops
-      summary: ポップの作成
+      summary: Creating pops
       description: ""
       operationId: createPops
       consumes:
@@ -104,7 +104,7 @@ paths:
     get:
       tags:
         - pops
-      summary: ポップ詳細を取得
+      summary: Fetching the pop details
       description: ""
       operationId: getPop
       consumes:
@@ -125,7 +125,7 @@ paths:
     put:
       tags:
         - pops
-      summary: ポップ情報を更新
+      summary: Updating a pop
       description: ""
       operationId: updatePop
       consumes:
@@ -150,7 +150,7 @@ paths:
     delete:
       tags:
         - pops
-      summary: ポップを削除
+      summary: Deleting a pop
       description: ""
       operationId: deletePop
       consumes:
@@ -172,7 +172,7 @@ paths:
     post:
       tags:
         - items
-      summary: 商品情報を作成
+      summary: Creating an item
       description: ""
       operationId: createItem
       consumes:
@@ -192,7 +192,7 @@ paths:
     get:
       tags:
         - items
-      summary: 商品情報詳細を取得
+      summary: Fetching an item details
       description: ""
       operationId: getItem
       consumes:
@@ -213,7 +213,7 @@ paths:
     put:
       tags:
         - items
-      summary: 商品情報を更新
+      summary: Updating an item
       description: ""
       operationId: updateItem
       consumes:
@@ -238,7 +238,7 @@ paths:
     delete:
       tags:
         - items
-      summary: 商品情報を削除
+      summary: Deleting an item
       description: ""
       operationId: deleteItem
       consumes:
@@ -260,7 +260,7 @@ paths:
     post:
       tags:
         - categories
-      summary: 商品カテゴリを追加
+      summary: Add an item category
       description: ""
       operationId: addCategory
       consumes:
@@ -280,7 +280,7 @@ paths:
     get:
       tags:
         - categories
-      summary: 商品カテゴリを取得
+      summary: Fetching an item category
       description: ""
       operationId: getCategory
       consumes:
@@ -301,7 +301,7 @@ paths:
     delete:
       tags:
         - categories
-      summary: 商品カテゴリの削除
+      summary: Deleting an item category
       description: ""
       operationId: removeCategory
       consumes:
@@ -323,7 +323,7 @@ paths:
     post:
       tags:
         - pops
-      summary: ポップサイズを追加
+      summary: Posting a pop size
       description: ""
       operationId: addSize
       consumes:
@@ -343,7 +343,7 @@ paths:
     get:
       tags:
         - pops
-      summary: ポップサイズを取得
+      summary: Fetching a pop size
       description: ""
       operationId: getSize
       consumes:
@@ -364,7 +364,7 @@ paths:
     delete:
       tags:
         - pops
-      summary: ポップサイズの削除
+      summary: Deleting a pop size
       description: ""
       operationId: removeSize
       consumes:
