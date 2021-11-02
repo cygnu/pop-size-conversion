@@ -23,7 +23,7 @@ paths:
       tags:
         - accounts
       security:
-        - tokenAuth: []
+        - basicAuth: []
       summary: Creating an account
       description: ""
       operationId: addAccount
@@ -384,6 +384,8 @@ paths:
             type: object
 
 securityDefinitions:
+  basicAuth:
+    type: basic
   tokenAuth:
     type: apiKey
     name: Authorization
