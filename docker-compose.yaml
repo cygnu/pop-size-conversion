@@ -3,7 +3,7 @@ services:
   swagger-ui:
     image: swaggerapi/swagger-ui
     ports:
-      - "8081:8080"
+      - "8080:8080"
     volumes:
       - ./docs:/usr/share/nginx/html
   swagger-watch:
@@ -12,6 +12,6 @@ services:
       - ./swagger-watch:/app
       - /app/node_modules
       - ./swagger:/swagger
-      - ./docs/swagger.yaml:/docs/swagger.yaml
+      - ./docs/swagger.yml:/docs/swagger.yml
     working_dir: /app
     command: 'node index.js'

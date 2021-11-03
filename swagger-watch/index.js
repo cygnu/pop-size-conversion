@@ -8,7 +8,7 @@ function resolve_path (dir) {
 
 function multi_file() {
   const file_path = resolve_path('./swagger/index.yaml');
-  const dest_file_path = resolve_path('./docs/swagger.yaml');
+  const dest_file_path = resolve_path('./docs/swagger.yml');
   const option = {
     input: file_path,
     output: dest_file_path,
