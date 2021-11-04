@@ -1,10 +1,11 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  title: "Pop Size Conversion"
-  description: "Pop Size Conversion\n
-  陳列棚に並ぶPOPのサイズ変更を楽々に作れます。\n"
-  version: "1.0.0"
-host: "localhost:8080"
+  title: Pop Size Conversion
+  description: |
+    Pop Size Conversion
+     陳列棚に並ぶPOPのサイズ変更を楽々に作れます。
+  version: 1.0.0
+host: 'localhost:8080'
 tags:
   - name: accounts
     description: ユーザ関連API
@@ -25,7 +26,7 @@ paths:
       security:
         - basicAuth: []
       summary: Creating an account
-      description: ""
+      description: ''
       operationId: addAccount
       consumes:
         - application/json
@@ -37,22 +38,22 @@ paths:
           description: Request Body
           required: true
           schema:
-            $ref: "#/definitions/AccountCreateRequest"
+            $ref: '#/definitions/AccountCreateRequest'
       responses:
-        "200":
+        '200':
           description: Successful login
           schema:
-            $ref: "#/definitions/AccountCreateResponse"
-        "400":
+            $ref: '#/definitions/AccountCreateResponse'
+        '400':
           description: Bad Request
           schema:
-            $ref: "#/definitions/400BadRequestError"
-  "/accounts/{username}":
+            $ref: '#/definitions/400BadRequestError'
+  '/accounts/{username}':
     get:
       tags:
         - accounts
       summary: Fetching an account
-      description: ""
+      description: ''
       operationId: findAccountByID
       parameters:
         - name: username
@@ -61,51 +62,51 @@ paths:
           required: true
           type: string
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/AccountCreateResponse"
+            $ref: '#/definitions/AccountCreateResponse'
   /pops:
     get:
       tags:
         - pops
       summary: Fetching a list of pop
-      description: ""
+      description: ''
       operationId: getPops
       consumes:
         - application/json
       produces:
         - application/json
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/PopListResponse"
+            $ref: '#/definitions/PopListResponse'
     post:
       tags:
         - pops
       summary: Creating pops
-      description: ""
+      description: ''
       operationId: createPops
       consumes:
         - application/json
       produces:
         - application/json
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/PopListResponse"
-        "400":
+            $ref: '#/definitions/PopListResponse'
+        '400':
           description: Bad Request
           schema:
-            $ref: "#/definitions/400BadRequestError"
-  "/pop/{id}":
+            $ref: '#/definitions/400BadRequestError'
+  '/pop/{id}':
     get:
       tags:
         - pops
       summary: Fetching the pop details
-      description: ""
+      description: ''
       operationId: getPop
       consumes:
         - application/json
@@ -114,19 +115,19 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/PopResponse"
+            $ref: '#/definitions/PopResponse'
     put:
       tags:
         - pops
       summary: Updating a pop
-      description: ""
+      description: ''
       operationId: updatePop
       consumes:
         - application/json
@@ -135,23 +136,23 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/PopResponse"
-        "400":
+            $ref: '#/definitions/PopResponse'
+        '400':
           description: Bad Request
           schema:
-            $ref: "#/definitions/400BadRequestError"
+            $ref: '#/definitions/400BadRequestError'
     delete:
       tags:
         - pops
       summary: Deleting a pop
-      description: ""
+      description: ''
       operationId: deletePop
       consumes:
         - application/json
@@ -160,11 +161,11 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -173,27 +174,27 @@ paths:
       tags:
         - items
       summary: Creating an item
-      description: ""
+      description: ''
       operationId: createItem
       consumes:
         - application/json
       produces:
         - application/json
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/ItemResponse"
-        "400":
+            $ref: '#/definitions/ItemResponse'
+        '400':
           description: Bad Request
           schema:
-            $ref: "#/definitions/400BadRequestError"
-  "/item/{id}":
+            $ref: '#/definitions/400BadRequestError'
+  '/item/{id}':
     get:
       tags:
         - items
       summary: Fetching an item details
-      description: ""
+      description: ''
       operationId: getItem
       consumes:
         - application/json
@@ -202,19 +203,19 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/ItemResponse"
+            $ref: '#/definitions/ItemResponse'
     put:
       tags:
         - items
       summary: Updating an item
-      description: ""
+      description: ''
       operationId: updateItem
       consumes:
         - application/json
@@ -223,23 +224,23 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/ItemResponse"
-        "400":
+            $ref: '#/definitions/ItemResponse'
+        '400':
           description: Bad Request
           schema:
-            $ref: "#/definitions/400BadRequestError"
+            $ref: '#/definitions/400BadRequestError'
     delete:
       tags:
         - items
       summary: Deleting an item
-      description: ""
+      description: ''
       operationId: deleteItem
       consumes:
         - application/json
@@ -248,11 +249,11 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -261,27 +262,27 @@ paths:
       tags:
         - categories
       summary: Add an item category
-      description: ""
+      description: ''
       operationId: addCategory
       consumes:
         - application/json
       produces:
         - application/json
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/CategoryResponse"
-        "400":
+            $ref: '#/definitions/CategoryResponse'
+        '400':
           description: Bad Request
           schema:
-            $ref: "#/definitions/400BadRequestError"
-  "/category/{id}":
+            $ref: '#/definitions/400BadRequestError'
+  '/category/{id}':
     get:
       tags:
         - categories
       summary: Fetching an item category
-      description: ""
+      description: ''
       operationId: getCategory
       consumes:
         - application/json
@@ -290,19 +291,19 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/CategoryResponse"
+            $ref: '#/definitions/CategoryResponse'
     delete:
       tags:
         - categories
       summary: Deleting an item category
-      description: ""
+      description: ''
       operationId: removeCategory
       consumes:
         - application/json
@@ -311,11 +312,11 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
@@ -324,27 +325,27 @@ paths:
       tags:
         - pops
       summary: Posting a pop size
-      description: ""
+      description: ''
       operationId: addSize
       consumes:
         - application/json
       produces:
         - application/json
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/SizeResponse"
-        "400":
+            $ref: '#/definitions/SizeResponse'
+        '400':
           description: Bad Request
           schema:
-            $ref: "#/definitions/400BadRequestError"
-  "/size/{id}":
+            $ref: '#/definitions/400BadRequestError'
+  '/size/{id}':
     get:
       tags:
         - pops
       summary: Fetching a pop size
-      description: ""
+      description: ''
       operationId: getSize
       consumes:
         - application/json
@@ -353,19 +354,19 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
-            $ref: "#/definitions/SizeResponse"
+            $ref: '#/definitions/SizeResponse'
     delete:
       tags:
         - pops
       summary: Deleting a pop size
-      description: ""
+      description: ''
       operationId: removeSize
       consumes:
         - application/json
@@ -374,15 +375,14 @@ paths:
       parameters:
         - name: id
           in: path
-          description: ""
+          description: ''
           required: true
           type: integer
       responses:
-        "200":
+        '200':
           description: A successful response.
           schema:
             type: object
-
 securityDefinitions:
   basicAuth:
     type: basic
@@ -423,7 +423,7 @@ definitions:
       pop:
         type: array
         items:
-          $ref: "#/definitions/PopResponse"
+          $ref: '#/definitions/PopResponse'
   PopResponse:
     type: object
     properties:
@@ -434,7 +434,7 @@ definitions:
         example: 広告の品
       addition:
         type: string
-        example: ""
+        example: ''
       date:
         type: string
         format: date
@@ -448,11 +448,11 @@ definitions:
         type: integer
         example: 85
       item:
-        $ref: "#/definitions/ItemResponse"
+        $ref: '#/definitions/ItemResponse'
       size:
         type: array
         items:
-          $ref: "#/definitions/SizeResponse"
+          $ref: '#/definitions/SizeResponse'
       createdAt:
         type: string
         format: date-time
@@ -474,7 +474,7 @@ definitions:
         type: integer
         example: 4901330532901
       category:
-        $ref: "#/definitions/CategoryResponse"
+        $ref: '#/definitions/CategoryResponse'
       createdAt:
         type: string
         format: date-time

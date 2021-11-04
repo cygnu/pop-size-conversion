@@ -1,0 +1,124 @@
+AccountCreateRequest:
+  type: object
+  required:
+    - username
+    - password
+  properties:
+    username:
+      type: string
+      example: cygnu
+    password:
+      type: string
+      example: P@ssw0rd
+AccountCreateResponse:
+  type: object
+  properties:
+    id:
+      type: integer
+    username:
+      type: string
+      example: cygnu
+    password:
+      type: string
+      example: P@ssw0rd
+    createdAt:
+      type: string
+      format: date-time
+PopListResponse:
+  type: object
+  properties:
+    pop:
+      type: array
+      items:
+        $ref: "#/definitions/PopResponse"
+PopResponse:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+      example: 広告の品
+    addition:
+      type: string
+      example: ""
+    date:
+      type: string
+      format: date
+    isOneDay:
+      type: boolean
+      example: false
+    price:
+      type: integer
+      example: 78
+    taxPrice:
+      type: integer
+      example: 85
+    item:
+      $ref: "#/definitions/ItemResponse"
+    size:
+      type: array
+      items:
+        $ref: "#/definitions/SizeResponse"
+    createdAt:
+      type: string
+      format: date-time
+    updatedAt:
+      type: string
+      format: date-time
+ItemResponse:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+      example: ポテトチップス Mサイズ
+    description:
+      type: string
+      example: 各種
+    code:
+      type: integer
+      example: 4901330532901
+    category:
+      $ref: "#/definitions/CategoryResponse"
+    createdAt:
+      type: string
+      format: date-time
+    updatedAt:
+      type: string
+      format: date-time
+CategoryResponse:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+      example: 菓子
+    createdOn:
+      type: string
+      format: date-time
+SizeResponse:
+  type: object
+  properties:
+    id:
+      type: integer
+    paperSize:
+      type: string
+      example: A4
+    baseImage:
+      type: string
+      example: 0001.jpeg
+    createdOn:
+      type: string
+      format: date-time
+400BadRequestError:
+  type: object
+  properties:
+    code:
+      type: number
+      example: 400
+    message:
+      type: string
+      example: Bad Request

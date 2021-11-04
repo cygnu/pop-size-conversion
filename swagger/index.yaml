@@ -1,0 +1,30 @@
+swagger: "2.0"
+info:
+  title: "Pop Size Conversion"
+  description: "Pop Size Conversion\n
+  陳列棚に並ぶPOPのサイズ変更を楽々に作れます。\n"
+  version: "1.0.0"
+host: "localhost:8080"
+tags:
+  - name: accounts
+    description: ユーザ関連API
+  - name: pops
+    description: POP情報関連API
+  - name: items
+    description: 商品関連API
+  - name: categories
+    description: 商品カテゴリ関連API
+schemes:
+  - https
+  - http
+paths:
+  $ref: ./paths/index.yaml
+securityDefinitions:
+  basicAuth:
+    type: basic
+  tokenAuth:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  $ref: ./components/index.yaml
