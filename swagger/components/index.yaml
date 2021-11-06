@@ -41,6 +41,15 @@ AccountUpdateResponse:
     updatedAt:
       type: string
       format: date-time
+PopListCreateRequest:
+  type: object
+  required:
+    - pop
+  properties:
+    pop:
+      type: array
+      items:
+        $ref: "#/definitions/PopCreateRequest"
 PopListCreateResponse:
   type: object
   properties:
@@ -48,6 +57,15 @@ PopListCreateResponse:
       type: array
       items:
         $ref: "#/definitions/PopCreateResponse"
+PopListUpdateRequest:
+  type: object
+  required:
+    - pop
+  properties:
+    pop:
+      type: array
+      items:
+        $ref: "#/definitions/PopUpdateRequest"
 PopListUpdateResponse:
   type: object
   properties:
@@ -55,6 +73,39 @@ PopListUpdateResponse:
       type: array
       items:
         $ref: "#/definitions/PopUpdateResponse"
+PopCreateRequest:
+  type: object
+  required:
+    - name
+    - price
+    - taxPrice
+    - item
+    - size
+  properties:
+    name:
+      type: string
+      example: 広告の品
+    addition:
+      type: string
+      example: ""
+    date:
+      type: string
+      format: date
+    isOneDay:
+      type: boolean
+      example: false
+    price:
+      type: integer
+      example: 78
+    taxPrice:
+      type: integer
+      example: 85
+    item:
+      $ref: "#/definitions/ItemCreateRequest"
+    size:
+      type: array
+      items:
+        $ref: "#/definitions/SizeRequest"
 PopCreateResponse:
   type: object
   properties:
@@ -87,6 +138,42 @@ PopCreateResponse:
     createdAt:
       type: string
       format: date-time
+PopUpdateRequest:
+  type: object
+  required:
+    - id
+    - name
+    - price
+    - taxPrice
+    - item
+    - size
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+      example: 広告の品
+    addition:
+      type: string
+      example: ""
+    date:
+      type: string
+      format: date
+    isOneDay:
+      type: boolean
+      example: false
+    price:
+      type: integer
+      example: 78
+    taxPrice:
+      type: integer
+      example: 85
+    item:
+      $ref: "#/definitions/ItemUpdateRequest"
+    size:
+      type: array
+      items:
+        $ref: "#/definitions/SizeRequest"
 PopUpdateResponse:
   type: object
   properties:
@@ -122,6 +209,23 @@ PopUpdateResponse:
     updateAt:
       type: string
       format: date-time
+ItemCreateRequest:
+  type: object
+  required:
+    - name
+    - category
+  properties:
+    name:
+      type: string
+      example: ポテトチップス Mサイズ
+    description:
+      type: string
+      example: 各種
+    code:
+      type: integer
+      example: 4901330532901
+    category:
+      $ref: "#/definitions/CategoryRequest"
 ItemCreateResponse:
   type: object
   properties:
@@ -141,6 +245,26 @@ ItemCreateResponse:
     createdAt:
       type: string
       format: date-time
+ItemUpdateRequest:
+  type: object
+  required:
+    - id
+    - name
+    - category
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+      example: ポテトチップス Mサイズ
+    description:
+      type: string
+      example: 各種
+    code:
+      type: integer
+      example: 4901330532901
+    category:
+      $ref: "#/definitions/CategoryRequest"
 ItemUpdateResponse:
   type: object
   properties:
@@ -163,6 +287,14 @@ ItemUpdateResponse:
     updatedAt:
       type: string
       format: date-time
+CategoryRequest:
+  type: object
+  required:
+    - name
+  properties:
+    name:
+      type: string
+      example: 菓子
 CategoryResponse:
   type: object
   properties:
@@ -174,6 +306,18 @@ CategoryResponse:
     createdOn:
       type: string
       format: date-time
+SizeRequest:
+  type: object
+  required:
+    - paperSize
+    - baseImage
+  properties:
+    paperSize:
+      type: string
+      example: A4
+    baseImage:
+      type: string
+      example: 0001.jpeg
 SizeResponse:
   type: object
   properties:
