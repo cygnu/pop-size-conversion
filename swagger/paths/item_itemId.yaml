@@ -1,0 +1,67 @@
+get:
+  tags:
+    - items
+  summary: Fetching an item details
+  description: ""
+  operationId: getItem
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - name: id
+      in: path
+      description: ""
+      required: true
+      type: integer
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        $ref: "#/definitions/ItemUpdateResponse"
+put:
+  tags:
+    - items
+  summary: Updating an item
+  description: ""
+  operationId: updateItem
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - name: id
+      in: path
+      description: ""
+      required: true
+      type: integer
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        $ref: "#/definitions/ItemUpdateResponse"
+    "400":
+      description: Bad Request
+      schema:
+        $ref: "#/definitions/400BadRequestError"
+delete:
+  tags:
+    - items
+  summary: Deleting an item
+  description: ""
+  operationId: deleteItem
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - name: id
+      in: path
+      description: ""
+      required: true
+      type: integer
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        type: object

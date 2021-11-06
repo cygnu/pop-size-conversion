@@ -1,0 +1,19 @@
+post:
+  tags:
+    - pops
+  summary: Posting a pop size
+  description: ""
+  operationId: addSize
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        $ref: "#/definitions/SizeResponse"
+    "400":
+      description: Bad Request
+      schema:
+        $ref: "#/definitions/400BadRequestError"

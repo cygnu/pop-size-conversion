@@ -1,0 +1,19 @@
+post:
+  tags:
+    - items
+  summary: Creating an item
+  description: ""
+  operationId: createItem
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        $ref: "#/definitions/ItemCreateResponse"
+    "400":
+      description: Bad Request
+      schema:
+        $ref: "#/definitions/400BadRequestError"

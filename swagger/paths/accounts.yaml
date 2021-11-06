@@ -1,0 +1,28 @@
+post:
+  tags:
+    - accounts
+  security:
+    - basicAuth: []
+  summary: Creating an account
+  description: ""
+  operationId: addAccount
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - name: body
+      in: body
+      description: Request Body
+      required: true
+      schema:
+        $ref: "#/definitions/AccountCreateRequest"
+  responses:
+    "200":
+      description: Successful login
+      schema:
+        $ref: "#/definitions/AccountCreateResponse"
+    "400":
+      description: Bad Request
+      schema:
+        $ref: "#/definitions/400BadRequestError"

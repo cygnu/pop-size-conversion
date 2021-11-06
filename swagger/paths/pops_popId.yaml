@@ -1,0 +1,67 @@
+get:
+  tags:
+    - pops
+  summary: Fetching the pop details
+  description: ""
+  operationId: getPop
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - name: id
+      in: path
+      description: ""
+      required: true
+      type: integer
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        $ref: "#/definitions/PopUpdateResponse"
+put:
+  tags:
+    - pops
+  summary: Updating a pop
+  description: ""
+  operationId: updatePop
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - name: id
+      in: path
+      description: ""
+      required: true
+      type: integer
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        $ref: "#/definitions/PopUpdateResponse"
+    "400":
+      description: Bad Request
+      schema:
+        $ref: "#/definitions/400BadRequestError"
+delete:
+  tags:
+    - pops
+  summary: Deleting a pop
+  description: ""
+  operationId: deletePop
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - name: id
+      in: path
+      description: ""
+      required: true
+      type: integer
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        type: object
