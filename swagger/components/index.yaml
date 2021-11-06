@@ -24,14 +24,14 @@ AccountCreateResponse:
     createdAt:
       type: string
       format: date-time
-PopListResponse:
+PopListCreateResponse:
   type: object
   properties:
     pop:
       type: array
       items:
-        $ref: "#/definitions/PopResponse"
-PopResponse:
+        $ref: "#/definitions/PopCreateResponse"
+PopCreateResponse:
   type: object
   properties:
     id:
@@ -55,7 +55,7 @@ PopResponse:
       type: integer
       example: 85
     item:
-      $ref: "#/definitions/ItemResponse"
+      $ref: "#/definitions/ItemCreateResponse"
     size:
       type: array
       items:
@@ -63,10 +63,7 @@ PopResponse:
     createdAt:
       type: string
       format: date-time
-    updatedAt:
-      type: string
-      format: date-time
-ItemResponse:
+ItemCreateResponse:
   type: object
   properties:
     id:
@@ -83,9 +80,6 @@ ItemResponse:
     category:
       $ref: "#/definitions/CategoryResponse"
     createdAt:
-      type: string
-      format: date-time
-    updatedAt:
       type: string
       format: date-time
 CategoryResponse:
