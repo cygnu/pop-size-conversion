@@ -65,7 +65,7 @@ paths:
         '200':
           description: A successful response.
           schema:
-            $ref: '#/definitions/AccountCreateResponse'
+            $ref: '#/definitions/AccountUpdateResponse'
   /pops:
     get:
       tags:
@@ -81,7 +81,7 @@ paths:
         '200':
           description: A successful response.
           schema:
-            $ref: '#/definitions/PopListCreateResponse'
+            $ref: '#/definitions/PopListUpdateResponse'
     post:
       tags:
         - pops
@@ -122,7 +122,7 @@ paths:
         '200':
           description: A successful response.
           schema:
-            $ref: '#/definitions/PopCreateResponse'
+            $ref: '#/definitions/PopUpdateResponse'
     put:
       tags:
         - pops
@@ -143,7 +143,7 @@ paths:
         '200':
           description: A successful response.
           schema:
-            $ref: '#/definitions/PopCreateResponse'
+            $ref: '#/definitions/PopUpdateResponse'
         '400':
           description: Bad Request
           schema:
@@ -210,7 +210,7 @@ paths:
         '200':
           description: A successful response.
           schema:
-            $ref: '#/definitions/ItemCreateResponse'
+            $ref: '#/definitions/ItemUpdateResponse'
     put:
       tags:
         - items
@@ -231,7 +231,7 @@ paths:
         '200':
           description: A successful response.
           schema:
-            $ref: '#/definitions/ItemCreateResponse'
+            $ref: '#/definitions/ItemUpdateResponse'
         '400':
           description: Bad Request
           schema:
@@ -417,6 +417,23 @@ definitions:
       createdAt:
         type: string
         format: date-time
+  AccountUpdateResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+      username:
+        type: string
+        example: cygnu
+      password:
+        type: string
+        example: P@ssw0rd
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
   PopListCreateResponse:
     type: object
     properties:
@@ -424,6 +441,13 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/PopCreateResponse'
+  PopListUpdateResponse:
+    type: object
+    properties:
+      pop:
+        type: array
+        items:
+          $ref: '#/definitions/PopUpdateResponse'
   PopCreateResponse:
     type: object
     properties:
@@ -456,6 +480,41 @@ definitions:
       createdAt:
         type: string
         format: date-time
+  PopUpdateResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+        example: 広告の品
+      addition:
+        type: string
+        example: ''
+      date:
+        type: string
+        format: date
+      isOneDay:
+        type: boolean
+        example: false
+      price:
+        type: integer
+        example: 78
+      taxPrice:
+        type: integer
+        example: 85
+      item:
+        $ref: '#/definitions/ItemUpdateResponse'
+      size:
+        type: array
+        items:
+          $ref: '#/definitions/SizeResponse'
+      createdAt:
+        type: string
+        format: date-time
+      updateAt:
+        type: string
+        format: date-time
   ItemCreateResponse:
     type: object
     properties:
@@ -473,6 +532,28 @@ definitions:
       category:
         $ref: '#/definitions/CategoryResponse'
       createdAt:
+        type: string
+        format: date-time
+  ItemUpdateResponse:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+        example: ポテトチップス Mサイズ
+      description:
+        type: string
+        example: 各種
+      code:
+        type: integer
+        example: 4901330532901
+      category:
+        $ref: '#/definitions/CategoryResponse'
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
         type: string
         format: date-time
   CategoryResponse:
