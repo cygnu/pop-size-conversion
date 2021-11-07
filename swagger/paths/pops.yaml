@@ -23,6 +23,13 @@ post:
     - application/json
   produces:
     - application/json
+  parameters:
+    - name: body
+      in: body
+      description: ""
+      required: true
+      schema:
+        $ref: "#/definitions/PopListCreateRequest"
   responses:
     "200":
       description: A successful response.

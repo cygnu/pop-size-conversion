@@ -92,6 +92,13 @@ paths:
         - application/json
       produces:
         - application/json
+      parameters:
+        - name: body
+          in: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/PopListCreateRequest'
       responses:
         '200':
           description: A successful response.
@@ -139,6 +146,12 @@ paths:
           description: ''
           required: true
           type: integer
+        - name: body
+          in: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/PopListUpdateRequest'
       responses:
         '200':
           description: A successful response.
@@ -180,6 +193,13 @@ paths:
         - application/json
       produces:
         - application/json
+      parameters:
+        - name: body
+          in: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/ItemCreateRequest'
       responses:
         '200':
           description: A successful response.
@@ -227,6 +247,12 @@ paths:
           description: ''
           required: true
           type: integer
+        - name: body
+          in: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/ItemUpdateRequest'
       responses:
         '200':
           description: A successful response.
@@ -268,6 +294,13 @@ paths:
         - application/json
       produces:
         - application/json
+      parameters:
+        - name: body
+          in: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/CategoryRequest'
       responses:
         '200':
           description: A successful response.
@@ -331,6 +364,13 @@ paths:
         - application/json
       produces:
         - application/json
+      parameters:
+        - name: body
+          in: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/SizeRequest'
       responses:
         '200':
           description: A successful response.

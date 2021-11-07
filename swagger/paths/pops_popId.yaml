@@ -35,6 +35,12 @@ put:
       description: ""
       required: true
       type: integer
+    - name: body
+      in: body
+      description: ""
+      required: true
+      schema:
+        $ref: "#/definitions/PopListUpdateRequest"
   responses:
     "200":
       description: A successful response.
