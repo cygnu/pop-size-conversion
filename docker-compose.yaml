@@ -6,7 +6,7 @@ services:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
     volumes:
-      - ./:/usr/app
+      - ./docker:/usr/app
     tty: true
     stdin_open: true
     working_dir: /usr/app
