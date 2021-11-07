@@ -6,10 +6,11 @@ services:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
     volumes:
-      - ./docker:/usr/app
+      - ./docker/client:/usr/app/client
     tty: true
     stdin_open: true
-    working_dir: /usr/app
+    working_dir: /usr/app/client
+    command: /bin/sh -c "yarn install && yarn start"
     ports:
       - "3000:3000"
 
