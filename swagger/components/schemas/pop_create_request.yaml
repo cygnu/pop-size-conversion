@@ -1,0 +1,32 @@
+type: object
+required:
+  - name
+  - price
+  - taxPrice
+  - item
+  - size
+properties:
+  name:
+    type: string
+    example: 広告の品
+  addition:
+    type: string
+    example: ""
+  date:
+    type: string
+    format: date
+  isOneDay:
+    type: boolean
+    example: false
+  price:
+    type: integer
+    example: 78
+  taxPrice:
+    type: integer
+    example: 85
+  item:
+    $ref: "#/definitions/ItemCreateRequest"
+  size:
+    type: array
+    items:
+      $ref: "#/definitions/SizeRequest"

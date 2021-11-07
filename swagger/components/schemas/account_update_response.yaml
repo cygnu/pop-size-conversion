@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: integer
+  username:
+    type: string
+    example: cygnu
+  password:
+    type: string
+    example: P@ssw0rd
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

@@ -1,343 +1,40 @@
 AccountCreateRequest:
-  type: object
-  required:
-    - username
-    - password
-  properties:
-    username:
-      type: string
-      example: cygnu
-    password:
-      type: string
-      example: P@ssw0rd
+  $ref: ./schemas/account_create_request.yaml
 AccountCreateResponse:
-  type: object
-  properties:
-    id:
-      type: integer
-    username:
-      type: string
-      example: cygnu
-    password:
-      type: string
-      example: P@ssw0rd
-    createdAt:
-      type: string
-      format: date-time
+  $ref: ./schemas/account_create_response.yaml
 AccountUpdateResponse:
-  type: object
-  properties:
-    id:
-      type: integer
-    username:
-      type: string
-      example: cygnu
-    password:
-      type: string
-      example: P@ssw0rd
-    createdAt:
-      type: string
-      format: date-time
-    updatedAt:
-      type: string
-      format: date-time
+  $ref: ./schemas/account_update_response.yaml
 PopListCreateRequest:
-  type: object
-  required:
-    - pop
-  properties:
-    pop:
-      type: array
-      items:
-        $ref: "#/definitions/PopCreateRequest"
+  $ref: ./schemas/popList_create_request.yaml
 PopListCreateResponse:
-  type: object
-  properties:
-    pop:
-      type: array
-      items:
-        $ref: "#/definitions/PopCreateResponse"
+  $ref: ./schemas/popList_create_response.yaml
 PopListUpdateRequest:
-  type: object
-  required:
-    - pop
-  properties:
-    pop:
-      type: array
-      items:
-        $ref: "#/definitions/PopUpdateRequest"
+  $ref: ./schemas/popList_update_request.yaml
 PopListUpdateResponse:
-  type: object
-  properties:
-    pop:
-      type: array
-      items:
-        $ref: "#/definitions/PopUpdateResponse"
+  $ref: ./schemas/popList_update_response.yaml
 PopCreateRequest:
-  type: object
-  required:
-    - name
-    - price
-    - taxPrice
-    - item
-    - size
-  properties:
-    name:
-      type: string
-      example: 広告の品
-    addition:
-      type: string
-      example: ""
-    date:
-      type: string
-      format: date
-    isOneDay:
-      type: boolean
-      example: false
-    price:
-      type: integer
-      example: 78
-    taxPrice:
-      type: integer
-      example: 85
-    item:
-      $ref: "#/definitions/ItemCreateRequest"
-    size:
-      type: array
-      items:
-        $ref: "#/definitions/SizeRequest"
+  $ref: ./schemas/pop_create_request.yaml
 PopCreateResponse:
-  type: object
-  properties:
-    id:
-      type: integer
-    name:
-      type: string
-      example: 広告の品
-    addition:
-      type: string
-      example: ""
-    date:
-      type: string
-      format: date
-    isOneDay:
-      type: boolean
-      example: false
-    price:
-      type: integer
-      example: 78
-    taxPrice:
-      type: integer
-      example: 85
-    item:
-      $ref: "#/definitions/ItemCreateResponse"
-    size:
-      type: array
-      items:
-        $ref: "#/definitions/SizeResponse"
-    createdAt:
-      type: string
-      format: date-time
+  $ref: ./schemas/pop_create_response.yaml
 PopUpdateRequest:
-  type: object
-  required:
-    - id
-    - name
-    - price
-    - taxPrice
-    - item
-    - size
-  properties:
-    id:
-      type: integer
-    name:
-      type: string
-      example: 広告の品
-    addition:
-      type: string
-      example: ""
-    date:
-      type: string
-      format: date
-    isOneDay:
-      type: boolean
-      example: false
-    price:
-      type: integer
-      example: 78
-    taxPrice:
-      type: integer
-      example: 85
-    item:
-      $ref: "#/definitions/ItemUpdateRequest"
-    size:
-      type: array
-      items:
-        $ref: "#/definitions/SizeRequest"
+  $ref: ./schemas/pop_update_request.yaml
 PopUpdateResponse:
-  type: object
-  properties:
-    id:
-      type: integer
-    name:
-      type: string
-      example: 広告の品
-    addition:
-      type: string
-      example: ""
-    date:
-      type: string
-      format: date
-    isOneDay:
-      type: boolean
-      example: false
-    price:
-      type: integer
-      example: 78
-    taxPrice:
-      type: integer
-      example: 85
-    item:
-      $ref: "#/definitions/ItemUpdateResponse"
-    size:
-      type: array
-      items:
-        $ref: "#/definitions/SizeResponse"
-    createdAt:
-      type: string
-      format: date-time
-    updateAt:
-      type: string
-      format: date-time
+  $ref: ./schemas/pop_update_response.yaml
 ItemCreateRequest:
-  type: object
-  required:
-    - name
-    - category
-  properties:
-    name:
-      type: string
-      example: ポテトチップス Mサイズ
-    description:
-      type: string
-      example: 各種
-    code:
-      type: integer
-      example: 4901330532901
-    category:
-      $ref: "#/definitions/CategoryRequest"
+  $ref: ./schemas/item_create_request.yaml
 ItemCreateResponse:
-  type: object
-  properties:
-    id:
-      type: integer
-    name:
-      type: string
-      example: ポテトチップス Mサイズ
-    description:
-      type: string
-      example: 各種
-    code:
-      type: integer
-      example: 4901330532901
-    category:
-      $ref: "#/definitions/CategoryResponse"
-    createdAt:
-      type: string
-      format: date-time
+  $ref: ./schemas/item_create_response.yaml
 ItemUpdateRequest:
-  type: object
-  required:
-    - id
-    - name
-    - category
-  properties:
-    id:
-      type: integer
-    name:
-      type: string
-      example: ポテトチップス Mサイズ
-    description:
-      type: string
-      example: 各種
-    code:
-      type: integer
-      example: 4901330532901
-    category:
-      $ref: "#/definitions/CategoryRequest"
+  $ref: ./schemas/item_update_request.yaml
 ItemUpdateResponse:
-  type: object
-  properties:
-    id:
-      type: integer
-    name:
-      type: string
-      example: ポテトチップス Mサイズ
-    description:
-      type: string
-      example: 各種
-    code:
-      type: integer
-      example: 4901330532901
-    category:
-      $ref: "#/definitions/CategoryResponse"
-    createdAt:
-      type: string
-      format: date-time
-    updatedAt:
-      type: string
-      format: date-time
+  $ref: ./schemas/item_update_response.yaml
 CategoryRequest:
-  type: object
-  required:
-    - name
-  properties:
-    name:
-      type: string
-      example: 菓子
+  $ref: ./schemas/category_request.yaml
 CategoryResponse:
-  type: object
-  properties:
-    id:
-      type: integer
-    name:
-      type: string
-      example: 菓子
-    createdOn:
-      type: string
-      format: date-time
+  $ref: ./schemas/category_response.yaml
 SizeRequest:
-  type: object
-  required:
-    - paperSize
-    - baseImage
-  properties:
-    paperSize:
-      type: string
-      example: A4
-    baseImage:
-      type: string
-      example: 0001.jpeg
+  $ref: ./schemas/size_request.yaml
 SizeResponse:
-  type: object
-  properties:
-    id:
-      type: integer
-    paperSize:
-      type: string
-      example: A4
-    baseImage:
-      type: string
-      example: 0001.jpeg
-    createdOn:
-      type: string
-      format: date-time
+  $ref: ./schemas/size_response.yaml
 400BadRequestError:
-  type: object
-  properties:
-    code:
-      type: number
-      example: 400
-    message:
-      type: string
-      example: Bad Request
+  $ref: ./schemas/response_400_bad_request.yaml

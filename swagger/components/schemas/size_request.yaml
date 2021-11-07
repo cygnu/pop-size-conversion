@@ -1,0 +1,11 @@
+type: object
+required:
+  - paperSize
+  - baseImage
+properties:
+  paperSize:
+    type: string
+    example: A4
+  baseImage:
+    type: string
+    example: 0001.jpeg

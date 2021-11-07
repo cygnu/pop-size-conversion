@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+    example: 菓子
+  createdOn:
+    type: string
+    format: date-time

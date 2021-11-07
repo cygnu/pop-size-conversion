@@ -1,0 +1,16 @@
+type: object
+required:
+  - name
+  - category
+properties:
+  name:
+    type: string
+    example: ポテトチップス Mサイズ
+  description:
+    type: string
+    example: 各種
+  code:
+    type: integer
+    example: 4901330532901
+  category:
+    $ref: "#/definitions/CategoryRequest"

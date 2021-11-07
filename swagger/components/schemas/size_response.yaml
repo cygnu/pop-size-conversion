@@ -1,0 +1,13 @@
+type: object
+properties:
+  id:
+    type: integer
+  paperSize:
+    type: string
+    example: A4
+  baseImage:
+    type: string
+    example: 0001.jpeg
+  createdOn:
+    type: string
+    format: date-time

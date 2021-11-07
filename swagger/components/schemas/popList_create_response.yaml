@@ -1,0 +1,6 @@
+type: object
+properties:
+  pop:
+    type: array
+    items:
+      $ref: "#/definitions/PopCreateResponse"

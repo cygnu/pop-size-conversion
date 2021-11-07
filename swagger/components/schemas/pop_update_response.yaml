@@ -1,0 +1,34 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+    example: 広告の品
+  addition:
+    type: string
+    example: ""
+  date:
+    type: string
+    format: date
+  isOneDay:
+    type: boolean
+    example: false
+  price:
+    type: integer
+    example: 78
+  taxPrice:
+    type: integer
+    example: 85
+  item:
+    $ref: "#/definitions/ItemUpdateResponse"
+  size:
+    type: array
+    items:
+      $ref: "#/definitions/SizeResponse"
+  createdAt:
+    type: string
+    format: date-time
+  updateAt:
+    type: string
+    format: date-time

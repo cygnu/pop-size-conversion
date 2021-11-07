@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+    example: ポテトチップス Mサイズ
+  description:
+    type: string
+    example: 各種
+  code:
+    type: integer
+    example: 4901330532901
+  category:
+    $ref: "#/definitions/CategoryResponse"
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

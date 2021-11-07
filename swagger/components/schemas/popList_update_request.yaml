@@ -1,0 +1,8 @@
+type: object
+required:
+  - pop
+properties:
+  pop:
+    type: array
+    items:
+      $ref: "#/definitions/PopUpdateRequest"

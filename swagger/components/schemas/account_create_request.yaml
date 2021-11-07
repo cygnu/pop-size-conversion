@@ -1,0 +1,11 @@
+type: object
+required:
+  - username
+  - password
+properties:
+  username:
+    type: string
+    example: cygnu
+  password:
+    type: string
+    example: P@ssw0rd
