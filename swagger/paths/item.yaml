@@ -1,3 +1,25 @@
+get:
+  tags:
+    - items
+  summary: Searching an item
+  description: ""
+  operationId: findItemByCode
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  parameters:
+    - name: code
+      in: query
+      description: ""
+      required: true
+      schema:
+        type: integer
+  responses:
+    "200":
+      description: A successful response.
+      schema:
+        $ref: "#/definitions/ItemCreateResponse"
 post:
   tags:
     - items
