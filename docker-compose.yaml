@@ -12,7 +12,7 @@ services:
     working_dir: /usr/app/client
     command: /bin/sh -c "yarn install && yarn start"
     ports:
-      - "3000:3000"
+      - "3001:3001"
 
   swagger-ui:
     image: swaggerapi/swagger-ui
@@ -34,7 +34,7 @@ services:
   swagger-nginx:
     image: openresty/openresty:alpine
     ports:
-      - "8081:80"
+      - "8081:8090"
     volumes:
       - ./docker/nginx/swagger.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
